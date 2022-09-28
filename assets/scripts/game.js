@@ -199,8 +199,8 @@ export default class Game {
 
                 allowOutsideClick: false,
                 showCancelButton: true,
-                confirmButtonColor: '#17B794',
-                cancelButtonColor: '#323232',
+                confirmButtonColor: '#0A3871',
+                cancelButtonColor: '#0A3871',
                 confirmButtonText: 'Nuevo juego',
                 cancelButtonText: 'Menu principal'
             })
