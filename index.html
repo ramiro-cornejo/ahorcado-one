@@ -1,20 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Juego del ahorcado propuesto por el programa ONE-Alura y Oracle.">
-    <meta name="keywords" content="Juego del ahorcado.Challange ONE.">
-    
-    <title>Juego del ahorcado</title>
 
-    <link rel="shortcut icon" href="/assets/img/Logo@2x.png" type="image/x-icon">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Juego del ahorcado propuesto por el programa ONE-Alura y Oracle.">
+        <meta name="keywords" content="Juego del ahorcado.Challange ONE.">
 
-    <link href="./assets/css/normalize.css" rel="stylesheet">
-    <link href="./assets/css/style.css" rel="stylesheet">
-</head>
-<body>
+        <link rel="shortcut icon" href="/assets/img/Logo@2x.png" type="image/x-icon">
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <title>Juego del ahorcado</title>
+    </head>
+
+    <body id="body">
+
+        <header>
+            <img src="./assets/img/Logo.svg" alt="Logo" id="logo">
+            <div id="toggle-teclado" style="display: none;">
+                <label for="toggle" id="teclado">Teclado en pantalla</label>
+                <label class="toggle-control">
+                    <input id="toggle" type="checkbox">
+                    <span class="control"></span>
+                </label>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="display-container" id="principal">
+                <input type="button" class="display_children" id="init" value="Iniciar juego">
+                <input type="button" class="display_children" id="new-word" value="Agregar nueva palabra">
+            </section>
+
+            <section class="container" id="nueva-palabra">
+
+                <input class="container-children" type="text" name="palabra" id="input-palabra" placeholder="Ingrese una palabra" autocomplete="off" spellcheck="false">
+                
+                <div class="container-children">
+                    <span id="message">
+                        <img src="./assets/img/bi_exclamation-circle-fill.png" alt="exclamation-mark"><label id="max">Máx. de 8 letras</label>
+                    </span>
+                    <div id="buttons">
+                        <button id="push-word">Agregar y empezar</button>
+                        <button id="cancel">Cancelar</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="game" class="container">
+                <canvas id="horca" width="300" height="400" class="container-children"></canvas>
+
+                <div id="interaccion" class="container-children">
+                    <table>
+                        <tbody>
+                            <tr id="palabra"></tr>
+                        </tbody>
+                    </table >
+                    
+                    <div>
+                        <p id="error"></p>
+                    </div>
+
+                    <section id="teclado-virtual" style="display: none;">
+
+                        <button class="key" type="button">Q</button>
+                        <button class="key" type="button">W</button>
+                        <button class="key" type="button">E</button>
+                        <button class="key" type="button">R</button>
+                        <button class="key" type="button">T</button>
+                        <button class="key" type="button">Y</button>
+                        <button class="key" type="button">U</button>
+                        <button class="key" type="button">I</button>
+                        <button class="key" type="button">O</button>
+                        <button class="key" type="button">P</button>
+                        <button class="key" type="button">A</button>
+                        <button class="key" type="button">S</button>
+                        <button class="key" type="button">D</button>
+                        <button class="key" type="button">F</button>
+                        <button class="key" type="button">G</button>
+                        <button class="key" type="button">H</button>
+                        <button class="key" type="button">J</button>
+                        <button class="key" type="button">K</button>
+                        <button class="key" type="button">L</button>
+                        <button class="key" type="button">Z</button>
+                        <button class="key" type="button">X</button>
+                        <button class="key" type="button">C</button>
+                        <button class="key" type="button">V</button>
+                        <button class="key" type="button">B</button>
+                        <button class="key" type="button">N</button>
+                        <button class="key" type="button">M</button>
+
+                    </section>
+
+                </div>
     
-</body>
+                <div id="buttons" class="container-children">
+                    <input type="button" id="new-game" value="Nuevo juego">
+                    <input type="button" id="end" value="Finalizar partida">
+                </div>
+    
+            </section>
+
+        </main>
+
+        <footer>
+            <div>
+                <label>Copyright &copy; 2022 | Ramiro Cornejo</label>
+            </div>
+        </footer>
+
+        <script type="module" src="./assets/scripts/ahorcado.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </body>
 </html>
